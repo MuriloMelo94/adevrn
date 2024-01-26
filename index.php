@@ -17,4 +17,8 @@ switch($url){
         AssociadoController::form();
     break;
 
+    default:
+        echo "Erro 404";
+    break;
+
 }

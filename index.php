@@ -16,6 +16,10 @@ switch($url){
     case '/associado/form':
         AssociadoController::form();
     break;
+    
+    case '/associado/form/store':
+        AssociadoController::store();
+    break;
 
     default:
         echo "Erro 404";

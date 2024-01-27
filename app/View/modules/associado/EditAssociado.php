@@ -10,9 +10,10 @@
                             <h5><i class="fa-solid fa-user-pen me-3"></i>Editar Associado</h5>
                         </div>
                         <div class="card-body">
-                            <form class="row mt-3" method="post" action="/associado/form/store">
+                            <form class="row mt-3" method="post" action="/associado/edit/update">
                                 <div class="col-md-6">
-                                    <input type="number" class="form-control d-none" id="id-associado" name="id" value="<?= $model->id?>" required disabled>
+                                    <label for="id" class="form-label d-none">id</label>
+                                    <input type="text" class="form-control d-none" id="id" name="id" value="<?= $model->id?>" required readonly>
 
                                     <label for="nome" class="form-label">Nome</label>
                                     <input type="text" class="form-control" id="nome" name="nome" value="<?= $model->nome?>" required>

@@ -29,6 +29,10 @@ switch($url){
         AssociadoController::store();
     break;
 
+    case '/associado/edit/update':
+        AssociadoController::update();
+    break;
+
     default:
         echo "Erro 404";
     break;

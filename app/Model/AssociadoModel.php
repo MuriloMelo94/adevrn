@@ -7,8 +7,6 @@ class AssociadoModel
 
     public function store()
     {
-        include 'app/DAO/AssociadoDAO.php';
-
         $dao = new AssociadoDAO();
 
         $dao->insert($this);
@@ -16,8 +14,6 @@ class AssociadoModel
 
     public function edit()
     {
-        include 'app/DAO/AssociadoDAO.php';
-
         $dao = new AssociadoDAO();
 
         $dao->update($this);
@@ -25,8 +21,6 @@ class AssociadoModel
 
     public function getAllRows()
     {
-        include 'app/DAO/AssociadoDAO.php';
-
         $dao = new AssociadoDAO();
 
         $this->rows = $dao->select();
@@ -34,8 +28,6 @@ class AssociadoModel
 
     public function getById(int $id)
     {
-        include 'app/DAO/AssociadoDAO.php';
-
         $dao = new AssociadoDAO();
         $obj = $dao->selectById($id);
 
@@ -48,8 +40,6 @@ class AssociadoModel
 
     public function destroy(int $id)
     {
-        include 'app/DAO/AssociadoDAO.php';
-
         $dao = new AssociadoDAO();
         $dao->delete($id);
 

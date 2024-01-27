@@ -6,8 +6,6 @@ class AssociadoController
     {
         $title = 'Lista de Associados';
 
-        include 'app/Model/AssociadoModel.php';
-
         $model = new AssociadoModel();
         $model->getAllRows();
 
@@ -23,8 +21,6 @@ class AssociadoController
 
     public static function store()
     {
-        include 'app/Model/AssociadoModel.php';
-
         $model = new AssociadoModel();
         $model->nome = $_POST['nome'];
         $model->email = $_POST['email'];
@@ -38,8 +34,6 @@ class AssociadoController
 
     public static function edit()
     {
-        include 'app/Model/AssociadoModel.php';
-
         $model = new AssociadoModel();
         $model = $model->getById( (int) $_GET['id']);
 
@@ -50,8 +44,6 @@ class AssociadoController
 
     public static function update()
     {
-        include 'app/Model/AssociadoModel.php';
-
         $model = new AssociadoModel();
         $model->id = $_POST['id'];
         $model->nome = $_POST['nome'];
@@ -66,8 +58,6 @@ class AssociadoController
 
     public static function destroy()
     {
-        include 'app/Model/AssociadoModel.php';
-
         $model = new AssociadoModel();
 
         $model->destroy($_GET['id']);

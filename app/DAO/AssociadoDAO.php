@@ -52,9 +52,6 @@ class AssociadoDAO
 
     public function selectById(int $id)
     {
-
-        include_once 'app/Model/AssociadoModel.php';
-
         $sql = "SELECT * FROM associados WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);

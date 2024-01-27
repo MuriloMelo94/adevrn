@@ -22,3 +22,6 @@ CREATE TABLE anuidades_associados (
 
 ALTER TABLE anuidades_associados
 ADD COLUMN status_pagamento BOOLEAN DEFAULT FALSE;
+
+ALTER TABLE `adev-rn`.anuidades MODIFY COLUMN ano DATE NOT NULL;
+ALTER TABLE `adev-rn`.associados MODIFY COLUMN data_de_filiacao DATE NOT NULL;

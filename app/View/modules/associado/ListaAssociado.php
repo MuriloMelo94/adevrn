@@ -42,6 +42,12 @@
                                     </tr>
 
                                 <?php endforeach ?>
+                                
+                                <?php if(count($model->rows) == 0): ?>
+                                    <tr>
+                                        <td colspan="5" class="fs-6 text-center">Nenhum registro encontrado.</td>
+                                    </tr>
+                                <?php endif ?>
 
                             </tbody>
                         </table>

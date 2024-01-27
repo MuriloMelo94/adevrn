@@ -67,7 +67,7 @@ class AssociadoDAO
 
     public function delete(int $id)
     {
-        $sql = "DELETE FROM associado WHERE id = ?";
+        $sql = "DELETE FROM associados WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);

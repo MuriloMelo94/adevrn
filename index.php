@@ -4,37 +4,36 @@ include 'App/Controller/AssociadoController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-switch($url){
+switch ($url) {
     case '/':
         echo 'Pagina Inicial';
-    break;
+        break;
 
     case '/associado':
         AssociadoController::index();
-    break;
-    
+        break;
+
     case '/associado/form':
         AssociadoController::form();
-    break;
-    
-    case '/associado/edit':
-        AssociadoController::edit();
-    break;
-    
-    case '/associado/delete':
-        AssociadoController::destroy();
-    break;
+        break;
 
     case '/associado/form/store':
         AssociadoController::store();
-    break;
+        break;
+
+    case '/associado/edit':
+        AssociadoController::edit();
+        break;
 
     case '/associado/edit/update':
         AssociadoController::update();
-    break;
+        break;
+        
+    case '/associado/delete':
+        AssociadoController::destroy();
+        break;
 
     default:
         echo "Erro 404";
-    break;
-
+        break;
 }

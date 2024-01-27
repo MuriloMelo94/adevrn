@@ -66,7 +66,13 @@ class AssociadoController
 
     public static function destroy()
     {
+        include 'app/Model/AssociadoModel.php';
 
+        $model = new AssociadoModel();
+
+        $model->destroy($_GET['id']);
+
+        header("Location: /associado");
     }
     
 }

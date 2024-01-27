@@ -46,4 +46,14 @@ class AssociadoModel
         }
     }
 
+    public function destroy(int $id)
+    {
+        include 'app/DAO/AssociadoDAO.php';
+
+        $dao = new AssociadoDAO();
+        $dao->delete($id);
+
+        header("Location: /associado");
+    }
+
 }

@@ -35,7 +35,7 @@
                                             <a class="btn btn-warning" href="/associado/edit?id=<?= $item->id ?>">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </a>
-                                            <a class="btn btn-danger" href="/associado/delete?id=<?= $item->id ?>">
+                                            <a class="btn btn-danger" onclick="confirmarExclusao(<?= $item->id ?>)">
                                                 <i class="fa-regular fa-trash-can"></i>
                                             </a>
                                         </td>
@@ -50,6 +50,17 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function confirmarExclusao(id) {
+
+            var confirmacao = confirm("Tem certeza de que deseja excluir este associado?");
+
+            if (confirmacao) {
+                window.location.href = "/associado/delete?id=" + id;
+            }
+        }
+    </script>
 </body>
 
 </html>

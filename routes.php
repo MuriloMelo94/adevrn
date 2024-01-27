@@ -1,6 +1,6 @@
 <?php
 
-include 'App/Controller/AssociadoController.php';
+use ADEVRN\App\Controller\AssociadoController;
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 

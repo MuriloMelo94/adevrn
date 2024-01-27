@@ -1,5 +1,10 @@
 <?php
 
+namespace ADEVRN\App\DAO;
+
+use ADEVRN\App\Model\AssociadoModel;
+use \PDO;
+
 class AssociadoDAO
 {
 
@@ -58,7 +63,7 @@ class AssociadoDAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("AssociadoModel");
+        return $stmt->fetchObject("adevrn\app\Model\AssociadoModel");
 
     }
 

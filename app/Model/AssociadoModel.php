@@ -1,5 +1,9 @@
 <?php
 
+namespace ADEVRN\App\Model;
+
+use ADEVRN\App\DAO\AssociadoDAO;
+
 class AssociadoModel
 {
     public $id, $nome, $email, $cpf, $data_de_filiacao;

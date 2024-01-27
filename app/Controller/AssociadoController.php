@@ -1,5 +1,9 @@
 <?php
 
+namespace ADEVRN\App\Controller;
+
+use ADEVRN\App\Model\AssociadoModel;
+
 class AssociadoController
 {
     public static function index()

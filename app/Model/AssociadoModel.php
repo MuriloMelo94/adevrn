@@ -14,6 +14,15 @@ class AssociadoModel
         $dao->insert($this);
     }
 
+    public function edit()
+    {
+        include 'app/DAO/AssociadoDAO.php';
+
+        $dao = new AssociadoDAO();
+
+        $dao->update($this);
+    }
+
     public function getAllRows()
     {
         include 'app/DAO/AssociadoDAO.php';
@@ -21,6 +30,20 @@ class AssociadoModel
         $dao = new AssociadoDAO();
 
         $this->rows = $dao->select();
+    }
+
+    public function getById(int $id)
+    {
+        include 'app/DAO/AssociadoDAO.php';
+
+        $dao = new AssociadoDAO();
+        $obj = $dao->selectById($id);
+
+        if($obj) {
+            return $obj;
+        } else {
+            header("Location: /associado");
+        }
     }
 
 }

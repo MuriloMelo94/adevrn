@@ -28,7 +28,16 @@ class AssociadoDAO
 
     public function update(AssociadoModel $model)
     {
-        
+        $sql = "UPDATE associados SET nome=?, email=?, CPF=?, data_de_filiacao=? WHERE id = ?";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $model->nome);
+        $stmt->bindValue(2, $model->email);
+        $stmt->bindValue(3, $model->cpf);
+        $stmt->bindValue(4, $model->data_de_filiacao);
+        $stmt->bindValue(5, $model->id);
+
+        $stmt->execute();
     }
     
     public function select()
@@ -39,6 +48,30 @@ class AssociadoDAO
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    public function selectById(int $id)
+    {
+
+        include_once 'app/Model/AssociadoModel.php';
+
+        $sql = "SELECT * FROM associados WHERE id = ?";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt->fetchObject("AssociadoModel");
+
+    }
+
+    public function delete(int $id)
+    {
+        $sql = "DELETE FROM associado WHERE id = ?";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
     }
 
 }

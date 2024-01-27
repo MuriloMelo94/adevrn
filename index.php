@@ -17,6 +17,14 @@ switch($url){
         AssociadoController::form();
     break;
     
+    case '/associado/edit':
+        AssociadoController::edit();
+    break;
+    
+    case '/associado/delete':
+        AssociadoController::destroy();
+    break;
+
     case '/associado/form/store':
         AssociadoController::store();
     break;

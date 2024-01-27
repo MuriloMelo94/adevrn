@@ -36,4 +36,21 @@ class AssociadoController
         header("Location: /associado");
     }
 
+    public static function edit()
+    {
+        include 'app/Model/AssociadoModel.php';
+
+        $model = new AssociadoModel();
+        $model = $model->getById( (int) $_GET['id']);
+
+        $title = 'Editar Associado';
+        
+        include 'app/view/modules/associado/EditAssociado.php';
+    }
+
+    public static function destroy()
+    {
+        
+    }
+    
 }

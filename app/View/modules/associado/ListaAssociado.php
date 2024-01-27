@@ -18,18 +18,27 @@
                                     <th scope="col">Nome</th>
                                     <th scope="col">E-mail</th>
                                     <th scope="col">Data de Filiação</th>
+                                    <th scope="col">Ações</th>
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
 
                                 <?php foreach ($model->rows as $item) : ?>
-                                    
+
                                     <tr>
-                                        <td class="d-none"><?= $item->id?></td>
-                                        <td><?= $item->nome?></td>
-                                        <td><?= $item->nome?></td>
-                                        <td><?= $item->email?></td>
-                                        <td><?= $item->data_de_filiacao?></td>
+                                        <td class="d-none"><?= $item->id ?></td>
+                                        <td><?= $item->CPF ?></td>
+                                        <td><?= $item->nome ?></td>
+                                        <td><?= $item->email ?></td>
+                                        <td><?= $item->data_de_filiacao ?></td>
+                                        <td>
+                                            <a class="btn btn-warning" href="/associado/edit?id=<?= $item->id ?>">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                            <a class="btn btn-danger" href="/associado/delete?id=<?= $item->id ?>">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </td>
                                     </tr>
 
                                 <?php endforeach ?>

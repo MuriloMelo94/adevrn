@@ -4,11 +4,20 @@ class AssociadoController
 {
     public static function index()
     {
+        $title = 'Lista de Associados';
+
+        include 'app/Model/AssociadoModel.php';
+
+        $model = new AssociadoModel();
+        $model->getAllRows();
+
         include 'app/view/modules/associado/ListaAssociado.php';
     }
     
     public static function form()
     {
+        $title = 'Novo Associado';
+        
         include 'app/view/modules/associado/FormAssociado.php';
     }
 

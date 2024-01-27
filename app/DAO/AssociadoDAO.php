@@ -33,7 +33,12 @@ class AssociadoDAO
     
     public function select()
     {
+        $sql = "SELECT * FROM associados ORDER BY nome ASC";
 
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
 }

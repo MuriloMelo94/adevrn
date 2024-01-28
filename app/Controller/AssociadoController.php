@@ -13,14 +13,14 @@ class AssociadoController extends Controller
         $model = new AssociadoModel();
         $model->getAllRows();
 
-        parent::render('associado/ListaAssociado', $model);
+        parent::render('associado/ListaAssociado', $model, $title);
     }
     
     public static function form()
     {
         $title = 'Novo Associado';
         
-        parent::render('associado/FormAssociado');
+        parent::render('associado/FormAssociado', '', $title);
     }
 
     public static function store()
@@ -43,7 +43,7 @@ class AssociadoController extends Controller
 
         $title = 'Editar Associado';
         
-        parent::render('associado/EditAssociado', $model);
+        parent::render('associado/EditAssociado', $model, $title);
     }
 
     public static function update()
@@ -67,6 +67,28 @@ class AssociadoController extends Controller
         $model->destroy($_GET['id']);
 
         header("Location: /associado");
+    }
+
+    public static function checkout()
+    {
+        $model = new AssociadoModel();
+        $model = $model->listaAnuidadesCheckout( (int) $_GET['id']);
+
+        $title = 'Checkout Associado';
+        
+        parent::render('associado/CheckoutAssociado', $model, $title);
+    }
+
+    public static function updateCheckout()
+    {
+        $model = new AssociadoModel();
+
+        $model->id = $_GET['id'];
+
+        $model->editPagamentoAnuidades($model->id);
+
+        header("Location: /associado");
+
     }
     
 }

@@ -87,7 +87,25 @@ class AssociadoModel extends Model
         $dao = new AssociadoDAO();
         $dao->delete($id);
 
-        header("Location: /associado");
+    }
+
+    public function listaAnuidadesCheckout(int $id)
+    {
+        $dao = new AssociadoDAO();
+        $obj = $dao->selectInnerJoinAnuidades($id);
+
+        if($obj) {
+            return $obj;
+        } else {
+            header("Location: /associado");
+        }
+    }
+
+    public function editPagamentoAnuidades(int $id)
+    {
+        $dao = new AssociadoDAO();
+        $dao->pagaAnuidades($id);
+
     }
 
 }

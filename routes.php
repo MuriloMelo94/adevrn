@@ -2,12 +2,13 @@
 
 use ADEVRN\App\Controller\AssociadoController;
 use ADEVRN\App\Controller\AnuidadeController;
+use ADEVRN\App\Controller\HomeController;
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch ($url) {
     case '/':
-        echo 'Pagina Inicial';
+        HomeController::index();
         break;
 
     case '/associado':
@@ -32,6 +33,14 @@ switch ($url) {
 
     case '/associado/delete':
         AssociadoController::destroy();
+        break;
+
+    case '/associado/checkout':
+        AssociadoController::checkout();
+        break;
+    
+    case '/associado/checkout/update':
+        AssociadoController::updateCheckout();
         break;
 
     case '/anuidade':

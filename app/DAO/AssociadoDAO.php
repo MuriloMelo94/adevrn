@@ -83,4 +83,26 @@ class AssociadoDAO extends DAO
         $stmt->execute();
     }
 
+    public function selectInnerJoinAnuidades(int $id)
+    {
+        $sql = "SELECT * FROM associados a INNER JOIN anuidades_associados an ON a.id = an.associado_id INNER JOIN anuidades anu ON an.anuidade_id = anu.id WHERE a.id = ?";
+        
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    Public function pagaAnuidades(int $id)
+    {
+        $sql = "UPDATE anuidades_associados SET status_pagamento=? WHERE associado_id = ?";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, 1);
+        $stmt->bindValue(2, $id);
+        $stmt->execute();
+
+    }
+
 }

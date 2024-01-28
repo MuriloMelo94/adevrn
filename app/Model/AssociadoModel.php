@@ -38,17 +38,13 @@ class AssociadoModel extends Model
         $listaStatusPagamento = $dao->verificaPagamentosEmDia();
 
         foreach($rows as $objAssociado){
-           
             $i = 0;
-
             foreach($listaStatusPagamento as $listaPagamento){
                 if($objAssociado->id == $listaPagamento['associado_id'] && $listaPagamento['status_pagamento'] == false){
                     $i++;
                 }
             }
-
             array_push($this->statusPagamento, [$objAssociado->id, $i]);
-
         }
     }
 

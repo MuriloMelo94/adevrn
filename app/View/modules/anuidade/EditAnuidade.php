@@ -1,5 +1,5 @@
 <?php include 'app/View/layout/header.php' ?>
-<div class="bg-body-tertiary vh-100">
+<div class="bg-body-tertiary">
     <div class="container">
         <div class="container-fluid">
             <div class="row pt-5 align-items-center">

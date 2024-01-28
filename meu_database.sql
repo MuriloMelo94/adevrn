@@ -15,9 +15,7 @@ CREATE TABLE anuidades (
 CREATE TABLE anuidades_associados (
  id INT PRIMARY KEY AUTO_INCREMENT,
  anuidade_id INT,
- associado_id INT,
- FOREIGN KEY (anuidade_id) REFERENCES anuidades(id),
- FOREIGN KEY (associado_id) REFERENCES associados(id)
+ associado_id INT
 );
 
 ALTER TABLE anuidades_associados

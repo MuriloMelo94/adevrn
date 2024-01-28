@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card w-50 mx-auto" style="min-width: 300px">
                     <div class="card-header">
-                        <h5><i class="fa-solid fa-user-plus me-3"></i>Nova Anuidade</h5>
+                        <h5><i class="fa-solid fa-file-circle-plus"></i> Nova Anuidade</h5>
                     </div>
                     <div class="card-body">
                         <form class="row mt-3" method="post" action="/anuidade/form/store">

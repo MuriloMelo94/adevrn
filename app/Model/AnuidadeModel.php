@@ -3,6 +3,7 @@
 namespace ADEVRN\App\Model;
 
 use ADEVRN\App\DAO\AnuidadeDAO;
+use ADEVRN\App\Model\AssociadoModel;
 
 class AnuidadeModel extends Model
 {
@@ -19,6 +20,14 @@ class AnuidadeModel extends Model
 
     public function verificaAnuidades(int $id)
     {
+        $objAnuidade = $this->getById($id);
+        
+        $modelAssociado = new AssociadoModel();
+        $rowsAssociados = $modelAssociado->getAllRows();
+
+        foreach($rowsAssociados as $associado){
+            $this->debitaAnuidades($objAnuidade->id, $associado->id);
+        }
 
     }
 

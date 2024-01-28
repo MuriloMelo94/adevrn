@@ -49,6 +49,8 @@ class AssociadoModel extends Model
 
         $this->rows = $dao->select();
         $this->defineStatusPagamento($this->rows);
+        
+        return $this->rows;
     }
 
     public function defineStatusPagamento(array $rows)

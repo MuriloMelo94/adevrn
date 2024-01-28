@@ -50,6 +50,16 @@ class AssociadoDAO extends DAO
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
+    Public function verificaPagamentosEmDia()
+    {
+        $sql = "SELECT * FROM anuidades_associados";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
     public function selectById(int $id)
     {
         $sql = "SELECT * FROM associados WHERE id = ?";

@@ -10,9 +10,9 @@ abstract class DAO
 
     public function __construct()
     {
-        $dsn = "mysql:host=localhost:3306;dbname=adev-rn";
+        $dsn = "mysql:host=". $_ENV['db']['host'] . ":" . $_ENV['db']['port'] . ";dbname=" . $_ENV['db']['database'];
 
-        $this->conexao = new PDO($dsn, 'root', '');
+        $this->conexao = new PDO($dsn, $_ENV['db']['user'], $_ENV['db']['pass']);
     }
 
 }

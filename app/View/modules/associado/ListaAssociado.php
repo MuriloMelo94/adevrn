@@ -22,9 +22,9 @@
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
-    
+
                                 <?php foreach ($model->rows as $item) : ?>
-    
+
                                     <tr>
                                         <td class="d-none"><?= $item->id ?></td>
                                         <td><?= $item->CPF ?></td>
@@ -38,17 +38,32 @@
                                             <a class="btn btn-danger" onclick="confirmarExclusao(<?= $item->id ?>)">
                                                 <i class="fa-regular fa-trash-can"></i>
                                             </a>
+
+                                            <?php foreach ($model->statusPagamento as $arrayPagamentos) : ?>
+                                                <?php if ($arrayPagamentos['0'] == $item->id) : ?>
+                                                    <?php if ($arrayPagamentos['1'] == true) : ?>
+
+                                                        <span class="badge rounded-pill text-bg-success">Em dia</span>
+
+                                                    <?php else : ?>
+
+                                                        <span class="badge rounded-pill text-bg-danger">Em atraso</span>
+
+                                                    <?php endif ?>
+                                                <?php endif ?>
+
+                                            <?php endforeach ?>
                                         </td>
                                     </tr>
-    
+
                                 <?php endforeach ?>
-    
+
                                 <?php if (count($model->rows) == 0) : ?>
                                     <tr>
                                         <td colspan="5" class="fs-6 text-center">Nenhum registro encontrado.</td>
                                     </tr>
                                 <?php endif ?>
-    
+
                             </tbody>
                         </table>
                     </div>

@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="CPF" class="form-label">CPF</label>
-                                    <input type="text" class="form-control" id="CPF" name="cpf" placeholder="___.___.___-__" value="<?= $model->CPF ?>" required>
+                                    <input type="text" class="form-control" id="CPF" name="cpf" maxlength="11" placeholder="___.___.___-__" value="<?= $model->CPF ?>" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="Data_de_filiacao" class="form-label">Data de Filiação</label>

@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="Data_de_filiacao" class="form-label">Data de Filiação</label>
-                                    <input type="date" class="form-control" id="Data_de_filiacao" name="data_de_filiacao" value="<?= $model->data_de_filiacao ?>" required>
+                                    <input type="date" class="form-control" id="Data_de_filiacao" name="data_de_filiacao" value="<?= $model->data_de_filiacao ?>" readonly required>
                                 </div>
                                 <div class="col-12 mt-3">
                                     <button type="submit" class="btn btn-primary">Salvar</button>

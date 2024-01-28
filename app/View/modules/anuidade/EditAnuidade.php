@@ -15,7 +15,7 @@
                                     <input type="number" class="form-control d-none" id="id" name="id" value="<?= $model->id ?>" required readonly>
     
                                     <label for="ano" class="form-label">ano</label>
-                                    <input type="date" class="form-control" id="ano" name="ano" value="<?= $model->ano ?>" required>
+                                    <input type="date" class="form-control" id="ano" name="ano" value="<?= $model->ano ?>" readonly required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="valor" class="form-label">valor</label>

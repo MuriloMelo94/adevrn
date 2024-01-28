@@ -45,7 +45,7 @@
                                                         <?php if ($arrayPagamentos['1'] == true) : ?>
 
                                                             <span class="badge rounded-pill text-bg-danger mt-2">Em atraso</span>
-                                                            <button type="button" class="btn btn-primary mx-xxl-2 my-2"><i class="fa-solid fa-dollar-sign"></i> Checkout</button>
+                                                            <a href="/checkout?id=<?= $item->id ?>" class="btn btn-primary mx-xxl-2 my-2"><i class="fa-solid fa-dollar-sign"></i> Checkout</a>
 
                                                         <?php else : ?>
 

@@ -24,6 +24,8 @@ class AssociadoDAO extends DAO
 
         $stmt->execute();
 
+        return $this->conexao->lastInsertId();
+
     }
 
     public function update(AssociadoModel $model)

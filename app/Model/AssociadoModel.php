@@ -3,6 +3,7 @@
 namespace ADEVRN\App\Model;
 
 use ADEVRN\App\DAO\AssociadoDAO;
+use ADEVRN\App\Model\AnuidadeModel;
 
 class AssociadoModel extends Model
 {
@@ -13,7 +14,26 @@ class AssociadoModel extends Model
     {
         $dao = new AssociadoDAO();
 
-        $dao->insert($this);
+        $idUltimoCadastro = $dao->insert($this);
+
+        $this->verificaAnuidades($idUltimoCadastro);
+    }
+
+    public function verificaAnuidades(int $id)
+    {
+        
+        $objAssociado = $this->getById($id);
+        $anoAssociado = date("Y", strtotime($objAssociado->data_de_filiacao));
+        
+        $modelAnuidade = new AnuidadeModel();
+
+        $rowsAnuidades = $modelAnuidade->getAllRows();
+        foreach($rowsAnuidades as $anuidade){
+            if((date("Y", strtotime($anuidade->ano))) >= $anoAssociado){
+                $modelAnuidade->debitaAnuidades($anuidade->id, $objAssociado->id);
+            }
+        }
+
     }
 
     public function edit()

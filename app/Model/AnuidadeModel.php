@@ -12,7 +12,14 @@ class AnuidadeModel extends Model
     {
         $dao = new AnuidadeDAO();
 
-        $dao->insert($this);
+        $idUltimoCadastro = $dao->insert($this);
+
+        $this->verificaAnuidades($idUltimoCadastro);
+    }
+
+    public function verificaAnuidades(int $id)
+    {
+
     }
 
     public function edit()
@@ -26,7 +33,7 @@ class AnuidadeModel extends Model
     {
         $dao = new AnuidadeDAO();
 
-        $this->rows = $dao->select();
+        return $this->rows = $dao->select();
     }
 
     public function getById(int $id)
@@ -47,6 +54,13 @@ class AnuidadeModel extends Model
         $dao->delete($id);
 
         header("Location: /anuidade");
+    }
+
+    public function debitaAnuidades(int $anuidadeId, int $associadoId)
+    {
+        $dao = new AnuidadeDAO();
+
+        $dao->insertDebitoAnuidades($anuidadeId, $associadoId);
     }
 
 }

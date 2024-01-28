@@ -22,6 +22,8 @@ class AnuidadeDAO extends DAO
 
         $stmt->execute();
 
+        return $this->conexao->lastInsertId();
+
     }
 
     public function update(AnuidadeModel $model)
@@ -64,6 +66,17 @@ class AnuidadeDAO extends DAO
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
+        $stmt->execute();
+    }
+
+    public function insertDebitoAnuidades(int $anuidadeId, int $associadoId)
+    {
+        $sql = "INSERT INTO anuidades_associados (anuidade_id, associado_id) VALUES (?, ?)";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $anuidadeId);
+        $stmt->bindValue(2, $associadoId);
+
         $stmt->execute();
     }
 

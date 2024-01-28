@@ -13,4 +13,4 @@
 
 <body>
 
-<?php include 'app/View/layout/navbar.php' ?>
+<?php include 'app/View/layout/navbar.php'?>

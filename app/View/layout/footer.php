@@ -1,6 +1,5 @@
-
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         // Obtém o caminho da URL atual
         var path = window.location.pathname;
 
@@ -11,7 +10,7 @@
         var linkMatched = false;
 
         // Itera sobre os links
-        links.forEach(function (link) {
+        links.forEach(function(link) {
             // Verifica se o caminho da URL é exatamente igual ao atributo href do link
             if (path === link.getAttribute('href')) {
                 // Adiciona a classe "active" ao link correspondente
@@ -20,13 +19,16 @@
             }
         });
 
-        // Se nenhum link foi correspondido, adiciona a classe "active" ao link "Home"
-        if (!linkMatched) {
+        // Se nenhum link foi correspondido e a URL contém subpastas, adiciona a classe "active" ao link "Home"
+        if (!linkMatched && path.includes('/associado')) {
+            document.querySelector('.nav-pills .nav-item a[href="/associado"]').classList.add('active');
+        } else if (!linkMatched && path.includes('/anuidade')) {
+            document.querySelector('.nav-pills .nav-item a[href="/anuidade"]').classList.add('active');
+        } else if (!linkMatched) {
             document.querySelector('.nav-pills .nav-item a[href="/"]').classList.add('active');
         }
     });
 </script>
-
 
 </body>
 

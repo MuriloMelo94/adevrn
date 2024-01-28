@@ -1,6 +1,7 @@
 <?php
 
 use ADEVRN\App\Controller\AssociadoController;
+use ADEVRN\App\Controller\AnuidadeController;
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -31,6 +32,30 @@ switch ($url) {
 
     case '/associado/delete':
         AssociadoController::destroy();
+        break;
+
+    case '/anuidade':
+        AnuidadeController::index();
+        break;
+
+    case '/anuidade/form':
+        AnuidadeController::form();
+        break;
+
+    case '/anuidade/form/store':
+        AnuidadeController::store();
+        break;
+
+    case '/anuidade/edit':
+        AnuidadeController::edit();
+        break;
+
+    case '/anuidade/edit/update':
+        AnuidadeController::update();
+        break;
+
+    case '/anuidade/delete':
+        AnuidadeController::destroy();
         break;
 
     default:

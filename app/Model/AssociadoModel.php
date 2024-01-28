@@ -4,10 +4,9 @@ namespace ADEVRN\App\Model;
 
 use ADEVRN\App\DAO\AssociadoDAO;
 
-class AssociadoModel
+class AssociadoModel extends Model
 {
     public $id, $nome, $email, $cpf, $data_de_filiacao;
-    public $rows;
 
     public function store()
     {

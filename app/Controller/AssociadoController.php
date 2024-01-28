@@ -4,7 +4,7 @@ namespace ADEVRN\App\Controller;
 
 use ADEVRN\App\Model\AssociadoModel;
 
-class AssociadoController
+class AssociadoController extends Controller
 {
     public static function index()
     {
@@ -13,14 +13,14 @@ class AssociadoController
         $model = new AssociadoModel();
         $model->getAllRows();
 
-        include 'app/view/modules/associado/ListaAssociado.php';
+        parent::render('associado/ListaAssociado', $model);
     }
     
     public static function form()
     {
         $title = 'Novo Associado';
         
-        include 'app/view/modules/associado/FormAssociado.php';
+        parent::render('associado/FormAssociado');
     }
 
     public static function store()
@@ -43,7 +43,7 @@ class AssociadoController
 
         $title = 'Editar Associado';
         
-        include 'app/view/modules/associado/EditAssociado.php';
+        parent::render('associado/EditAssociado', $model);
     }
 
     public static function update()

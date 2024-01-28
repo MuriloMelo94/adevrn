@@ -5,16 +5,11 @@ namespace ADEVRN\App\DAO;
 use ADEVRN\App\Model\AssociadoModel;
 use \PDO;
 
-class AssociadoDAO
+class AssociadoDAO extends DAO
 {
-
-    private $conexao;
-
     public function __construct()
     {
-        $dsn = "mysql:host=localhost:3306;dbname=adev-rn";
-
-        $this->conexao = new PDO($dsn, 'root', '');
+        parent::__construct();
     }
 
     public function insert(AssociadoModel $model)

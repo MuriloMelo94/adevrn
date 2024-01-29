@@ -31,7 +31,7 @@ Passo 2 - Modifique o arquivo `config.php` com as variáveis referentes ao seu u
 
 Passo 3 - Utilize os comandos constantes no arquivo `meu_database.sql` para criar as tabelas no banco.
 
-Passo 4 - Utilize um servidor apache como o Laragon para facilitar o start da sua estrutura. O Laragon inicia o Mysql por padrão ao clicar em 'Iniciar Tudo'.
+Passo 4 - Utilize um servidor apache (ou um ferramenta que rode um como o Laragon) para facilitar o start da sua estrutura. O Laragon inicia o Mysql por padrão ao clicar em 'Iniciar Tudo'.
 
 (Caso use o Laragon, execute o comando `git clone` dentro da pasta www do Laragon).
 

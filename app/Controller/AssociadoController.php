@@ -82,9 +82,9 @@ class AssociadoController extends Controller
     public static function updateCheckout()
     {
         $model = new AssociadoModel();
-
+        
         $model->id = $_GET['id'];
-
+        
         $model->editPagamentoAnuidades($model->id);
 
         header("Location: /associado");

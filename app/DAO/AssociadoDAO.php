@@ -96,10 +96,10 @@ class AssociadoDAO extends DAO
 
     Public function pagaAnuidades(int $id)
     {
-        $sql = "UPDATE anuidades_associados SET status_pagamento=? WHERE associado_id = ?";
+        $sql = "UPDATE anuidades_associados SET status_pagamento = ? WHERE associado_id = ?";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, 1);
+        $stmt->bindValue(1, '1');
         $stmt->bindValue(2, $id);
         $stmt->execute();
 

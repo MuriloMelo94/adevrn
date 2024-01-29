@@ -50,7 +50,7 @@
                                 </tfoot>
                             </table>
                             <div class="d-flex justify-content-end">
-                                <button type="button" onclick="confirmarPagamento(<?= $model['0']->id ?>)" class="btn btn-success my-3 w-25 fs-5"><i class="fa-solid fa-money-bill-1-wave"></i> Pagar</button>
+                                <button type="button" onclick="confirmarPagamento(<?= $model['0']->associado_id ?>)" class="btn btn-success my-3 w-25 fs-5"><i class="fa-solid fa-money-bill-1-wave"></i> Pagar</button>
                             </div>
                     </div>
                 </div>
